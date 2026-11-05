@@ -28,4 +28,4 @@ Targets Frappe v16. The packaging (PEP 621 `pyproject.toml`, no `setup.py`) is v
 
 ## License
 
-MIT
+Proprietary

@@ -3,7 +3,7 @@ app_title = "Nest CRM Tasks"
 app_publisher = "NestERP"
 app_description = "Lead Activity Hub - custom CRM task management for NestERP clients"
 app_email = "info@nesterp.com"
-app_license = "MIT"
+app_license = "Proprietary"
 
 # Fixtures - these are exported/imported with bench migrate
 # The client script fixture intercepts ToDo list row clicks for Lead records
