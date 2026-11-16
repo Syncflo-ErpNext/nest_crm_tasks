@@ -17,7 +17,7 @@
   "view": "Form",
   "enabled": 1,
   "script_type": "Form",
-  "script": "frappe.ui.form.on('ToDo', {\n  refresh: function(frm) {\n    frm.page.remove_inner_button && frm.page.remove_inner_button(__('My Activities'));\n    frm.page.set_secondary_action('<i class=\"fa fa-arrow-left\" style=\"margin-right:6px;\"></i>My Activities', function() {\n      frappe.set_route('my-activities');\n    });\n    if ((frm.doc.reference_type === 'Lead' || frm.doc.reference_type === 'Customer') && frm.doc.reference_name) {\n      frm.add_custom_button(__('Party Activity Hub'), function() {\n        frappe.set_route('party-activity', frm.doc.reference_type, frm.doc.reference_name);\n      });\n    }\n  }\n});\n"
+  "script": "frappe.ui.form.on('ToDo', {\n  refresh: function(frm) {\n    frm.page.remove_inner_button && frm.page.remove_inner_button(__('My Activities'));\n    frm.page.set_secondary_action(__('My Activities'), function() {\n      frappe.set_route('my-activities');\n    }, 'arrow-left');\n    if ((frm.doc.reference_type === 'Lead' || frm.doc.reference_type === 'Customer') && frm.doc.reference_name) {\n      frm.add_custom_button(__('Party Activity Hub'), function() {\n        frappe.set_route('party-activity', frm.doc.reference_type, frm.doc.reference_name);\n      });\n    }\n  }\n});\n"
  },
  {
   "doctype": "Client Script",

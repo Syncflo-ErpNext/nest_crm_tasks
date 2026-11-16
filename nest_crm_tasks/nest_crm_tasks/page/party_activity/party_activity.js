@@ -47,15 +47,15 @@ class PartyActivityHub {
 	setup_page_actions() {
 		var me = this;
 
-		this.page.set_primary_action('<i class="fa fa-user" style="margin-right:6px;"></i>View Full Profile', function() {
+		this.page.set_primary_action(__('View Full Profile'), function() {
 			if (me.party_type && me.party_name) {
 				frappe.set_route('Form', me.party_type, me.party_name);
 			}
-		});
+		}, 'user');
 
-		this.page.set_secondary_action('<i class="fa fa-arrow-left" style="margin-right:6px;"></i>My Activities', function() {
+		this.page.set_secondary_action(__('My Activities'), function() {
 			frappe.set_route('my-activities');
-		});
+		}, 'arrow-left');
 
 		this.page.add_action_item('Back to My Activities', function() {
 			frappe.set_route('my-activities');
