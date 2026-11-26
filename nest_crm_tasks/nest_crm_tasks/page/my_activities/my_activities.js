@@ -379,6 +379,14 @@ class MyActivities {
 				ref_label = '<span class="text-muted" style="font-size:11px;font-weight:500;">'
 					+ esc(ref_text)
 					+ '</span>';
+			} else if (!t.reference_type) {
+				// Unlinked task (not Lead/Customer driven): label it and say who sent it.
+				var sender = (t.assigned_by && t.assigned_by !== t.allocated_to)
+					? ' - From ' + frappe.user.full_name(t.assigned_by)
+					: '';
+				ref_label = '<span class="indicator-pill gray" style="font-size:11px;">'
+					+ esc('Task' + sender)
+					+ '</span>';
 			}
 
 			// Description — full text, no truncation, word-wraps. frappe.utils.strip_html
